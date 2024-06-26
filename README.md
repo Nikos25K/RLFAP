@@ -1,6 +1,6 @@
 # Radio Link Frequency Assignment Problem (RLFAP)
 The Radio Link Frequency Assignment Problem is a Constraint Satisfaction Problem (CSP). <br>
-Extensive description of the problem can be found [here](https://en.wikipedia.org/wiki/Main_Page)
+Extensive description of the problem can be found [here](https://miat.inrae.fr/schiex/rlfap.shtml)
 
 ## Search Methods:
 - **Backtracking with Forward Checking (FC)**
