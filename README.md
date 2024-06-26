@@ -1,6 +1,6 @@
 # Radio Link Frequency Assignment Problem (RLFAP)
 The Radio Link Frequency Assignment Problem is a Constraint Satisfaction Problem (CSP). <br>
-Extensive description of the problem can be found 
+Extensive description of the problem can be found [here](https://en.wikipedia.org/wiki/Main_Page)
 
 ## Search Methods:
 - **Backtracking with Forward Checking (FC)**
@@ -11,6 +11,8 @@ Extensive description of the problem can be found
 ## Heuristic used:
 **dom/wdeg**
 The dom/wdeg heuristic is a conflict-directed variable ordering heuristic. <br>
+This heuristic aims to first explore the most "promising" branches of the search space. <br>
+Given an assignment and a CSP instance, it computes and returns the variable with the smallest ratio of domain size to weighted degree.
 The heuristic it is used in all of the above methods because of its efficiency. <br>
 It takes some seconds only for searching, while without it, it would take a big amount of time for the search to be completed due to the difficulty of the instances.
 
@@ -51,7 +53,7 @@ The instances were given an amount of 6 minutes to be solved. If the time exceed
 | 14-f28    | UNSAT  | 8185280           | 8874        | 35.8    |
 
 
-### Method: FC-CBJ hybrid with dom/wdeg heuristic
+### Method: FC-CBJ hybrid
 | Instance  | Result | Constraint Checks | Assignments | Time    |
 |-----------|--------|-------------------|-------------|---------|
 | 2-f24     | SAT    | 19914             | 254         | 0.1     |
@@ -67,7 +69,7 @@ The instances were given an amount of 6 minutes to be solved. If the time exceed
 | 14-f27    | SAT    | 589281            | 11859       | 7.7     |
 | 14-f28    | -      | -                 | -           | > 360   |
 
-### Method: Min Conflicts with maximum steps = 1000
+### Method: Min Conflicts with maximum steps = 10000
 | Instance  | Result | Constraint Checks | Assignments | Time  | Constraints Violated |
 |-----------|--------|-------------------|-------------|-------|----------------------|
 | 2-f24     | UNSAT  | 29165690          | 10200       | 29.7  | 10                   |
@@ -94,3 +96,8 @@ The instances were given an amount of 6 minutes to be solved. If the time exceed
 | 14-f27    | UNSAT  | 94768427          | 10916       | 124.7 | 119                  |
 | 14-f28    | UNSAT  | 94640989          | 10916       | 116.04| 190                  |
 | 14-f28    | UNSAT  | 94641274          | 10916       | 117.2 | 182                  |
+
+### References:
+The search.py, csp.py and utils.py are used from [https://github.com/aimacode/aima-python](https://github.com/aimacode/aima-python) <br>
+F. Boussemart, F. Hemery, C. Lecoutre and L. Sais. Boosting Systematic Search by
+Weighting Constraints. Proc. of ECAI 2004, pages 146–150, 2004 [https://frontiersinai.com/ecai/ecai2004/ecai04/pdf/p0146.pdf](https://frontiersinai.com/ecai/ecai2004/ecai04/pdf/p0146.pdf)
